@@ -29,7 +29,7 @@ const Tags: React.FC<TagsProps> = ({ onSelectedCourseTagsChange, onSelectedStude
                 id="tags-outlined"
                 options={tagsData || []}
                 filterSelectedOptions
-                onChange={(event, value) => onSelectedCourseTagsChange(value.map(v => v.name))}
+                onChange={(_, value) => onSelectedCourseTagsChange(value.map(v => v.name))}
                 renderInput={(params) => (
                     <TextField
                         {...params}
@@ -45,7 +45,7 @@ const Tags: React.FC<TagsProps> = ({ onSelectedCourseTagsChange, onSelectedStude
                 options={studentsData || []}
                 getOptionLabel={(student) => student.name}
                 filterSelectedOptions
-                onChange={(event, value) => onSelectedStudentTagsChange(value.map(student => student.name))}
+                onChange={(_, value) => onSelectedStudentTagsChange(value.map(student => student.name))}
                 renderInput={(params) => (
                     <TextField
                         {...params}

@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import dsa from "../assets/Learning-Data-Structures-and-Algorithms-is-Important1.png"
 
 const CourseList: React.FC = () => {
   const { courses, loading, error } = useFetchCourses();
@@ -25,7 +26,7 @@ const CourseList: React.FC = () => {
         <Card key={course.courseId} sx={{ maxWidth: 345 }}>
           <CardMedia
             sx={{ height: 140 }}
-            image="/static/images/cards/contemplative-reptile.jpg"
+            image={dsa}
             title="green iguana"
           />
           <CardContent>
