@@ -2,9 +2,16 @@
   margin: 0;
   padding: 0;
 }
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+.courses_head h1{
+  text-align: center;
+  margin: 20px;
+}
+.app{
+  width: 98vw;
 }

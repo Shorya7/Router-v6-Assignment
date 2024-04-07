@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import dsa from "../assets/Learning-Data-Structures-and-Algorithms-is-Important1.png"
+import './courses.css'
 
 const CourseList: React.FC = () => {
   const { courses, loading, error } = useFetchCourses();
@@ -21,7 +22,7 @@ const CourseList: React.FC = () => {
   }
 
   return (
-    <div>
+    <div id='course_list'>
       {courses.map(course => (
         <Card key={course.courseId} sx={{ maxWidth: 345 }}>
           <CardMedia
@@ -30,7 +31,7 @@ const CourseList: React.FC = () => {
             title="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography sx={{textAlign:'center', marginBottom:2}} gutterBottom variant="h5" component="div">
               {course.courseName}
             </Typography>
             <Typography variant="body2" color="text.secondary">

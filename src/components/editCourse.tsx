@@ -6,6 +6,7 @@ import { useFetcher } from "react-router-dom";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Tags from './autocomplete';
+import './edit.css'
 
 const EditCourse: React.FC = () => {
     const { courseId } = useParams<{ courseId: string }>();
@@ -55,7 +56,7 @@ const EditCourse: React.FC = () => {
     };
 
     return (
-        <div>
+        <div id='edit_course'>
             <h1>Edit Course</h1>
             <fetcher.Form method="post" action={`/edit/${courseId}`} onSubmit={handleSubmit}>
                 <Box
@@ -96,7 +97,7 @@ const EditCourse: React.FC = () => {
                 </Box>
                 <Tags onSelectedCourseTagsChange={handleCourseTagsChange} onSelectedStudentTagsChange={handleStudentTagsChange} />
 
-                <button type="submit" name='action' value="update">Save Changes</button>
+                <button id='update' type="submit" name='action' value="update">Save Changes</button>
             </fetcher.Form>
         </div>
     );

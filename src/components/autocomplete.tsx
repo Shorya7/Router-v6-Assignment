@@ -25,6 +25,7 @@ const Tags: React.FC<TagsProps> = ({ onSelectedCourseTagsChange, onSelectedStude
     return (
         <Stack spacing={3} sx={{ width: 500 }}>
             <Autocomplete
+            sx={{ "& > :not(style)": { m: 2, width: "70ch" } }}
                 multiple
                 id="tags-outlined"
                 options={tagsData || []}
@@ -40,6 +41,7 @@ const Tags: React.FC<TagsProps> = ({ onSelectedCourseTagsChange, onSelectedStude
             />
 
             <Autocomplete
+            sx={{ "& > :not(style)": { m: 2, width: "70ch" } }}
                 multiple
                 id="students-outlined"
                 options={studentsData || []}

@@ -1,0 +1,14 @@
+#edit_course{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#edit_course h1{
+    /* text-align: center; */
+    margin: 20px 0;
+}
+#update{
+    margin: 20px;
+}

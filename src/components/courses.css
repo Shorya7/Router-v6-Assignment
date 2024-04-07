@@ -1,0 +1,6 @@
+#course_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
