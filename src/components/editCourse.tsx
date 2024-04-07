@@ -57,7 +57,7 @@ const EditCourse: React.FC = () => {
 
     return (
         <div id='edit_course'>
-            <h1>Edit Course</h1>
+            <h1>Edit Course Details</h1>
             <fetcher.Form method="post" action={`/edit/${courseId}`} onSubmit={handleSubmit}>
                 <Box
                     component="form"
