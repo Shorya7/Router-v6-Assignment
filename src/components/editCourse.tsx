@@ -5,12 +5,16 @@ import useFetchCourses from './fetchCourses';
 import { useFetcher } from "react-router-dom";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import Tags from './autocomplete';
 
 const EditCourse: React.FC = () => {
     const { courseId } = useParams<{ courseId: string }>();
     const { courses, loading, error } = useFetchCourses();
     const [course, setCourse] = useState<Course | null>(null);
+    const [courseTags, setCourseTags] = useState<string[]>([]);
+    const [studentTags, setStudentTags] = useState<string[]>([]);
     const fetcher = useFetcher();
+
     useEffect(() => {
         const foundCourse = courses.find((c) => c.courseId === courseId);
         if (foundCourse) {
@@ -30,11 +34,21 @@ const EditCourse: React.FC = () => {
         return <div>Course not found.</div>;
     }
 
+    const handleCourseTagsChange = (selectedTags: string[]) => {
+        setCourseTags(selectedTags);
+    };
+
+    const handleStudentTagsChange = (selectedTags: string[]) => {
+        setStudentTags(selectedTags);
+    };
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
         console.log("Form submitted!");
 
-      
+        console.log("Selected course tags:", courseTags);
+        console.log("Selected student tags:", studentTags);
+
         const formData = new FormData(e.currentTarget);
         await fetcher.submit(formData);
         console.log("Course after submission:", course);
@@ -43,7 +57,7 @@ const EditCourse: React.FC = () => {
     return (
         <div>
             <h1>Edit Course</h1>
-            <fetcher.Form method="post" action='/edit/:courseId' onSubmit={handleSubmit}>
+            <fetcher.Form method="post" action={`/edit/${courseId}`} onSubmit={handleSubmit}>
                 <Box
                     component="form"
                     sx={{ "& > :not(style)": { m: 2, width: "70ch" } }}
@@ -80,8 +94,7 @@ const EditCourse: React.FC = () => {
                         }}
                     />
                 </Box>
-
-
+                <Tags onSelectedCourseTagsChange={handleCourseTagsChange} onSelectedStudentTagsChange={handleStudentTagsChange} />
 
                 <button type="submit" name='action' value="update">Save Changes</button>
             </fetcher.Form>

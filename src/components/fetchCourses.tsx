@@ -8,6 +8,7 @@ export interface Course {
   students: { name: string }[];
 }
 
+
 const useFetchCourses = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
