@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import dsa from "../assets/Learning-Data-Structures-and-Algorithms-is-Important1.png"
-import './courses.css'
+import '../styles/courses.css'
 
 const CourseList: React.FC = () => {
   const { courses, loading, error } = useFetchCourses();

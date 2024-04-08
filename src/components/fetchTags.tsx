@@ -25,7 +25,7 @@ export const useFetchTags = (): FetchResult<Tag> => {
         }
         const jsonData = await response.json();
         setTags(jsonData.tags);
-        console.log(jsonData.tags)
+        // console.log(jsonData.tags)
         setLoading(false);
       } catch (error:any) {
         setError(error.message);

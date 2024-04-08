@@ -51,7 +51,7 @@ const Tags: React.FC<TagsProps> = ({ onSelectedCourseTagsChange, onSelectedStude
                 renderInput={(params) => (
                     <TextField
                         {...params}
-                        label="Course Students"
+                        label="Enrolled Students"
                         placeholder="Select Course Students"
                     />
                 )}

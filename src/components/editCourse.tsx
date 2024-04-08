@@ -6,7 +6,7 @@ import { useFetcher } from "react-router-dom";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Tags from './autocomplete';
-import './edit.css'
+import '../styles/edit.css'
 
 const EditCourse: React.FC = () => {
     const { courseId } = useParams<{ courseId: string }>();
@@ -15,6 +15,8 @@ const EditCourse: React.FC = () => {
     const [courseTags, setCourseTags] = useState<string[]>([]);
     const [studentTags, setStudentTags] = useState<string[]>([]);
     const fetcher = useFetcher();
+    if( fetcher.formData)
+    console.log(fetcher.formData)
 
     useEffect(() => {
         const foundCourse = courses.find((c) => c.courseId === courseId);
